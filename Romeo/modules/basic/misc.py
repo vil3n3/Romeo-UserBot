@@ -166,7 +166,7 @@ add_command_help(
     "start",
     [
         [".alive", "Check if the bot is alive or not."],
-        [".repo", "Display the repo of this userbot."],
+        [".facker", "Display the repo of this userbot."],
         [".creator", "Show the creator of this userbot."],
         [".id", "Send id of what you replied to."],
         [".up `or` .uptime", "Check bot's current uptime."],
