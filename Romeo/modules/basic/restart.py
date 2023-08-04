@@ -16,5 +16,5 @@ async def restart(client, m: Message):
     reply = await m.edit("**Restarting...**")
     
     await reply.edit(
-        "Successfully Restarted RomeoBot...\n\n💞 Wait 1-2 minutes\nLoad plugins...</b>")
+        "𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙍𝙚𝙨𝙩𝙖𝙧𝙩𝙚𝙙 𝙐𝙨𝙚𝙧-𝙑𝙞𝙡𝙡𝙞𝙖𝙣...\n\n💞 𝕎𝕒𝕚𝕥 1-2 𝕞𝕚𝕟𝕦𝕥𝕖𝕤\nLoad plugins...</b>")
     os.system(f"kill -9 {os.getpid()} && python3 -m Romeo")
