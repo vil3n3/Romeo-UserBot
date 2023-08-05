@@ -31,11 +31,11 @@ async def collect_afk_messages(bot: Client, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
-                f"I am not available right now.\n"
-                f"Last seen: {last_seen}\n"
-                f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
+                f"`ᴮᵉᵉᵖ ᵇᵒᵒᵖ. ᵀʰⁱˢ ⁱˢ ᵃⁿ ᵃᵘᵗᵒᵐᵃᵗᵉᵈ ᵐᵉˢˢᵃᵍᵉ.\n"
+                f"ɪ ᴀᴍ ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ʀɪɢʜᴛ ɴᴏᴡ.\n"
+                f"𝑳𝒂𝒔𝒕 𝒔𝒆𝒆𝒏: {last_seen}\n"
+                f"🆁🅴🅰🆂🅾🅽: ```{AFK_REASON.upper()}```\n"
+                f"ˢᵉᵉ ʸᵒᵘ ᵃᶠᵗᵉʳ ᴵ'ᵐ ᵈᵒⁿᵉ ᵈᵒⁱⁿᵍ ʷʰᵃᵗᵉᵛᵉʳ ᴵ'ᵐ ᵈᵒⁱⁿᵍ.`"
             )
             await bot.send_message(
                 chat_id=GetChatID(message),
@@ -47,11 +47,11 @@ async def collect_afk_messages(bot: Client, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 50:
                 text = (
-                    f"`This is an automated message\n"
-                    f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"`ᵀʰⁱˢ ⁱˢ ᵃⁿ ᵃᵘᵗᵒᵐᵃᵗᵉᵈ ᵐᵉˢˢᵃᵍᵉ.\n"
+                    f"🅻🅰🆂🆃 🆂🅴🅴🅽: {last_seen}\n"
+                    f"𝑻𝒉𝒊𝒔 𝒊𝒔 𝒕𝒉𝒆 10𝒕𝒉 𝒕𝒊𝒎𝒆 𝑰'𝒗𝒆 𝒕𝒐𝒍𝒅 𝒚𝒐𝒖 𝑰'𝒎 𝑨𝑭𝑲 𝒓𝒊𝒈𝒉𝒕 𝒏𝒐𝒘..\n"
+                    f"𝙸'𝚕𝚕 𝚐𝚎𝚝 𝚝𝚘 𝚢𝚘𝚞 𝚠𝚑𝚎𝚗 𝙸 𝚐𝚎𝚝 𝚝𝚘 𝚢𝚘𝚞.\n"
+                    f"𝑁𝑜 𝑚𝑜𝑟𝑒 𝑓𝑜𝑟 𝑦𝑜𝑢 𝑎𝑢𝑡𝑜𝑚𝑎𝑡𝑒𝑑 𝑚𝑒𝑠𝑠𝑎𝑔𝑒.:"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -62,10 +62,10 @@ async def collect_afk_messages(bot: Client, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
-                    f"Last seen: {last_seen}\n"
-                    f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"`𝐻𝑒𝑦 𝐼'𝑚 𝑠𝑡𝑖𝑙𝑙 𝑛𝑜𝑡 𝑏𝑎𝑐𝑘 𝑦𝑒𝑡.\n"
+                    f"🅻🅰🆂🆃 🆂🅴🅴🅽: {last_seen}\n"
+                    f"🅂🅃🄸🄻🄻 🄱🅄🅂🅈 : ```{AFK_REASON.upper()}```\n"
+                    f"ᵀᴿᵞ ᴾᴵᴺᴳᴵᴺᴳ ᴬ ᴮᴵᵀ ᴸᴬᵀᴱᴿ.`"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
