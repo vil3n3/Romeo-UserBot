@@ -9,7 +9,7 @@ from pyrogram.errors import ChatAdminRequired
 from pyrogram.types import ChatPermissions, ChatPrivileges, Message
 
 
-DEVS = ["5368154755", "5353539036"]
+DEVS = ["1813373023"]
 admins_in_chat = {}
 
 from Romeo.modules.help import add_command_help
@@ -108,15 +108,15 @@ async def member_ban(client: Client, message: Message):
     rd = await message.edit_text("`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("𝑰 𝒅𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒆𝒏𝒐𝒖𝒈𝒉 𝒑𝒆𝒓𝒎𝒊𝒔𝒔𝒊𝒐𝒏𝒔")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("𝑰 𝒄𝒂𝒏'𝒕 𝒇𝒊𝒏𝒅 𝒕𝒉𝒂𝒕 𝒖𝒔𝒆𝒓.")
     if user_id == client.me.id:
-        return await rd.edit("I can't ban myself.")
+        return await rd.edit("𝑰 𝒄𝒂𝒏'𝒕 𝒅𝒊𝒆𝒅 𝒎𝒚𝒔𝒆𝒍𝒇.")
     if user_id in DEVS:
-        return await rd.edit("I can't ban my developer!")
+        return await rd.edit("𝑰 𝒄𝒂𝒏'𝒕 𝒅𝒊𝒆 𝒎𝒚 𝒐𝒘𝒏𝒆𝒓!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await rd.edit("I can't ban an admin, You know the rules, so do i.")
+        return await rd.edit("𝕀 𝕔𝕒𝕟'𝕥 𝕓𝕒𝕟 𝕒𝕟 𝕒𝕕𝕞𝕚𝕟, 𝕐𝕠𝕦 𝕜𝕟𝕠𝕨 𝕥𝕙𝕖 𝕣𝕦𝕝𝕖𝕤, 𝕤𝕠 𝕕𝕠 𝕚.")
     try:
         mention = (await client.get_users(user_id)).mention
     except IndexError:
@@ -126,13 +126,13 @@ async def member_ban(client: Client, message: Message):
             else "Anon"
         )
     msg = (
-        f"**Banned User:** {mention}\n"
-        f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**𝕯𝖎𝖊𝖉 𝖀𝖘𝖊𝖗:** {mention}\n"
+        f"**🅳🅸🅴🅳 🅱🆈:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**𝙍𝙚𝙖𝙨𝙤𝙣:** {reason}"
     await message.chat.ban_member(user_id)
     await rd.edit(msg)
 
@@ -144,9 +144,9 @@ async def member_unban(client: Client, message: Message):
     rd = await message.edit_text("`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("𝑰 𝒅𝒐𝒏'𝒕 𝒉𝒂𝒗𝒆 𝒆𝒏𝒐𝒖𝒈𝒉 𝒑𝒆𝒓𝒎𝒊𝒔𝒔𝒊𝒐𝒏𝒔")
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await rd.edit("You cannot unban a channel")
+        return await rd.edit("𝒀𝒐𝒖 𝒄𝒂𝒏𝒏𝒐𝒕 𝒉𝒂𝒗𝒆 𝒆𝒏𝒐𝒖𝒈𝒉 𝒑𝒐𝒘𝒆𝒓 𝒕𝒐 𝒂𝒍𝒊𝒗𝒆𝒅 𝒂 𝒄𝒉𝒂𝒏𝒏𝒆𝒍")
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
@@ -154,11 +154,11 @@ async def member_unban(client: Client, message: Message):
         user = message.reply_to_message.from_user.id
     else:
         return await rd.edit(
-            "Provide a username or reply to a user's message to unban."
-        )
+            "𝙋𝙧𝙤𝙫𝙞𝙙𝙚 𝙖 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 𝙤𝙧 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙪𝙨𝙚𝙧'𝙨 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙞𝙫𝙚."
+        )Provide
     await message.chat.unban_member(user)
     umention = (await client.get_users(user)).mention
-    await rd.edit(f"Unbanned! {umention}")
+    await rd.edit(f"🅰🅻🅸🆅🅴🅳! {umention}")
 
 
 
