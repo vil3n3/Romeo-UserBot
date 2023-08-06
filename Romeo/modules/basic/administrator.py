@@ -155,7 +155,7 @@ async def member_unban(client: Client, message: Message):
     else:
         return await rd.edit(
             "𝙋𝙧𝙤𝙫𝙞𝙙𝙚 𝙖 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 𝙤𝙧 𝙧𝙚𝙥𝙡𝙮 𝙩𝙤 𝙖 𝙪𝙨𝙚𝙧'𝙨 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙞𝙫𝙚."
-        )Provide
+        )
     await message.chat.unban_member(user)
     umention = (await client.get_users(user)).mention
     await rd.edit(f"🅰🅻🅸🆅🅴🅳! {umention}")
